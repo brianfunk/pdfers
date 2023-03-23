@@ -295,6 +295,14 @@
             <artifactId>metrics-core</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+
+		<!-- Playwright -->
+		<dependency>
+			<groupId>com.microsoft.playwright</groupId>
+			<artifactId>playwright</artifactId>
+			<version>1.17.0</version>
+		</dependency>
+
     </dependencies>
 
     <build>
