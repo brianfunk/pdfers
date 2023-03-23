@@ -30,7 +30,7 @@ public class HtmlToPdfService {
             Page page = context.newPage();
 
             page.setContent(html);
-            byte[] pdfContent = page.pdf(new Page.PdfOptions().setFormat("A4").setPrintBackground(true));
+            byte[] pdfContent = page.pdf(new Page.PdfOptions().setWidth("8.5in").setHeight("11in").setPrintBackground(true));
 
             browser.close();
             return pdfContent;
