@@ -1,7 +1,6 @@
 package com.mycompany.myapp.service;
 
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.options.PdfOrientations;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,7 +16,7 @@ public class HtmlToPdfService {
             Page page = context.newPage();
 
             page.navigate(url);
-            byte[] pdfContent = page.pdf(new Page.PdfOptions().withPath(null).withFormat("A4").withPrintBackground(true));
+            byte[] pdfContent = page.pdf(new Page.PdfOptions().setFormat("A4").setPrintBackground(true));
 
             browser.close();
             return pdfContent;
@@ -31,7 +30,7 @@ public class HtmlToPdfService {
             Page page = context.newPage();
 
             page.setContent(html);
-            byte[] pdfContent = page.pdf(new Page.PdfOptions().withPath(null).withFormat("A4").withPrintBackground(true));
+            byte[] pdfContent = page.pdf(new Page.PdfOptions().setFormat("A4").setPrintBackground(true));
 
             browser.close();
             return pdfContent;
