@@ -71,7 +71,11 @@ public class SecurityConfiguration {
             .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
-            .authorizeRequests()
+			.authorizeRequests()
+
+			.antMatchers("/api/generate-pdf-from-url").permitAll()
+			.antMatchers("/api/generate-pdf-from-html").permitAll()
+
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
             .antMatchers("/app/**/*.{js,html}").permitAll()
             .antMatchers("/i18n/**").permitAll()
